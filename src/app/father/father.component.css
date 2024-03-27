@@ -1,0 +1,61 @@
+.book-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .book-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 20rem;
+        height: 15rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 1rem;
+        transition: transform 0.3s;
+
+        .content {
+            position: relative;
+        }
+        &:hover {
+            transform: translateY(-20px);
+            cursor: pointer;
+            border: 1px solid #197c8b;
+
+            .line {
+
+                border: 3px solid #197c8b;
+                position: absolute;
+                bottom: 0;
+                transition: width 0.5s;
+                animation: growingLine 0.5s forwards;
+            }
+        }
+
+
+        p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1rem;
+        }
+
+    }
+
+}
+
+.even-book {
+    background-color: #f0f0f0;
+  }
+
+  .odd-book {
+    background-color: #d0d0d0;
+  }
+
+  @keyframes growingLine {
+    0% {
+        width: 0;
+        transition: width 0.5s;
+    }
+    100% {
+        width: 100%;
+    }
+    }

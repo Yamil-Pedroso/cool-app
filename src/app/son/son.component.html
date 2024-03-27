@@ -1,0 +1,22 @@
+<p>
+  Hello father
+</p>
+
+<span>
+  {{ getSon }}
+</span>
+
+<div>
+  <label for="entry">
+    Write a message to father
+  </label>
+  <input type="text" id="entry" [(ngModel)]="message" />
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<div>
+  <button (click)="increment()">Increment</button>
+  <button (click)="decrement()">Decrement</button>
+
+  <span></span>
+</div>

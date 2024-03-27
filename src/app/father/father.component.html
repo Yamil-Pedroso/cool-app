@@ -1,0 +1,43 @@
+<h2>father works!</h2>
+
+<p>Message from son: {{ recievedMessage }}</p>
+
+<div>
+  <app-son
+    (incrementFromSon)="increment()"
+    (decrementFromSon)="decrement()"
+    (messageEventFromSon)="receiveMessage($event)"
+  ></app-son>
+
+  <p>Counter: {{ count }}</p>
+  <p>
+    This information is coming from the local storage:
+  </p>
+  <!--<div class="book-content">
+    <div *ngFor="let item of localStorageObj">
+      <ul>
+        <li *ngIf="item.book">Book: {{ item.book }}</li>
+        <li *ngIf="item.author">Author: {{ item.author }}</li>
+        <li *ngIf="item.year">Year: {{ item.year }}</li>
+        <li *ngIf="item.pages">Pages: {{ item.pages }}</li>
+      </ul>
+    </div>
+    [ngStyle]="{ 'background-color': i % 2 === 0 ? '#f0f0f0' : '#d0d0d0' }"
+  </div> -->
+
+  <div class="book-wrapper">
+    <div
+      *ngFor="let book of books; let i = index"
+      [ngClass]="getBookClass(i)"
+      class="book-content"
+    >
+      <div class="content">
+        <p>Book: {{ book.book }}</p>
+        <p>Author: {{ book.author }}</p>
+        <p>Year: {{ book.year }}</p>
+        <p>Pages: {{ book.pages }}</p>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+</div>
